@@ -32,7 +32,7 @@ catch (Exception e)
 ### Getting Started  
 
 1. Download the zip file containing the source
-2. You will need to Register an application in order to create your unique Client ID, Client Secret, and OAuth Redirection URL. Follow the steps (1 thru 4) from <https://api-portal.digikey.com/start>.
+2. You will need to Register an application in order to create your unique Client ID, Client Secret, and OAuth Redirection URL. Follow the steps available on the API Portal here https://developer.digikey.com/
 3. In the solution folder update  apiclient.properties with the ClientId, ClientSecret, and RedirectUri values from step 2.
 ```
 ApiClient.ClientSecret=YOUR SECRET HERE

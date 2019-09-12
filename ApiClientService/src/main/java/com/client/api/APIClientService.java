@@ -69,7 +69,7 @@ public class APIClientService {
 	 * @throws IOException web request to API failed
 	 */
 	public String KeywordSearch(String keyword, boolean retry) throws AuthorizationException, IOException {
-		String resourcePath = "/services/partsearch/v2/keywordsearch";
+		String resourcePath = "/Search/v3/Products/Keyword";
 		KeywordSearchRequest request = new KeywordSearchRequest(keyword, 25);
 		ResetExpiredAccessTokenIfNeeded();
 		URL postUrl = null;
@@ -92,9 +92,9 @@ public class APIClientService {
 		http.setDoInput(true);
 		http.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 		_log.log(Level.INFO, "current token: " + ClientSettings.getAccessToken());
-		http.setRequestProperty("Authorization", ClientSettings.getAccessToken());
+		http.setRequestProperty("Authorization", "Bearer "+ClientSettings.getAccessToken());
 		_log.log(Level.INFO, "client: " + ClientSettings.getClientId());
-		http.setRequestProperty("X-IBM-Client-ID", ClientSettings.getClientId());
+		http.setRequestProperty("X-Digikey-Client-Id", ClientSettings.getClientId());
 		Gson gson = new Gson();
 		String body = (gson.toJson(request));
 		byte[] postData = body.getBytes(StandardCharsets.UTF_8);

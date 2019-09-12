@@ -25,9 +25,9 @@ public final class DigiKeyUrlConstants {
 	public static URL APIEndpoint;
 	static {
 		try {
-			BaseAddress = new URL("https://sso.digikey.com");
-			TokenEndpoint = new URL("https://sso.digikey.com/as/token.oauth2");
-			AuthorizationEndpoint = new URL("https://sso.digikey.com/as/authorization.oauth2");
+			BaseAddress = new URL("https://api.digikey.com");
+			TokenEndpoint = new URL("https://api.digikey.com/v1/oauth2/token");
+			AuthorizationEndpoint = new URL("https://api.digikey.com/v1/oauth2/authorize");
 			APIEndpoint = new URL("https://api.digikey.com");
 		} catch (MalformedURLException e) {
 			//This will not happen unless the above URLs are modified incorrectly.
